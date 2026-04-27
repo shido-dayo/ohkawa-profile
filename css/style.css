@@ -479,7 +479,6 @@ section h2{
 	max-width: 288px;
 	}
 }
-
 @media only screen and (max-width: 1199px){
 	section h2{
 		padding: 50px 0 20px 0;
@@ -521,4 +520,25 @@ section h2{
     width: 100px;
     height: 30px;
     background: rgba(192, 200, 100, 0.5); /* 半透明のテープ */
+}
+/* 画面幅が768px以下（一般的なスマホ・タブレット）の場合の設定 */
+@media screen and (max-width: 768px) {
+    .col3 li {
+        float: none;      /* 横並びを解除 */
+        width: 100%;      /* 幅をいっぱいにする */
+        margin-right: 0;  /* 右側の余白を消す */
+        margin-bottom: 50px; /* 名刺ごとの上下の余白をしっかり取る */
+    }
+
+    /* 以前設定した「3の倍数」の設定などをスマホでは無効化する */
+    .col3 li:nth-child(3n),
+    .col3 li:nth-child(3n+1) {
+        margin-right: 0;
+        clear: none;
+    }
+    
+    /* 3行テキストのサイズをスマホ用に少し調整（必要であれば） */
+    .card-text {
+        font-size: 16px; /* スマホでは少し大きくすると読みやすいです */
+    }
 }
