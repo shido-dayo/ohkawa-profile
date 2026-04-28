@@ -523,21 +523,27 @@ section h2{
 /* 画面幅が768px以下（一般的なスマホ・タブレット）の場合の設定 */
 @media screen and (max-width: 768px) {
     .col3 li {
-        float: none;      /* 横並びを解除 */
-        width: 100%;      /* 幅をいっぱいにする */
-        margin-right: 0;  /* 右側の余白を消す */
-        margin-bottom: 50px; /* 名刺ごとの上下の余白をしっかり取る */
+        float: none;           /* 横並びを解除 */
+        width: 100%;           /* 幅をいっぱいにする */
+        margin-right: 0 !important; /* 右側の余白を強制的に0にする */
+        margin-left: 0 !important;  /* 左側の余白も0にする */
+        margin-bottom: 50px;   /* 下の要素との間隔 */
+        
+        /* 中身を中央に寄せる設定 */
+        display: block;
+        text-align: center;
     }
 
-    /* 以前設定した「3の倍数」の設定などをスマホでは無効化する */
-    .col3 li:nth-child(3n),
-    .col3 li:nth-child(3n+1) {
-        margin-right: 0;
-        clear: none;
+    .col3 li img {
+        margin-left: auto;     /* 画像を中央に寄せる */
+        margin-right: auto;    /* 画像を中央に寄せる */
+        display: block;        /* 中央寄せを有効にするために必要 */
+        max-width: 280px;      /* スマホで画像が大きすぎないように調整（お好みで） */
+        width: 80%;            /* 画面幅に対して少し余裕を持たせる */
     }
-    
-    /* 3行テキストのサイズをスマホ用に少し調整（必要であれば） */
+
     .card-text {
-        font-size: 16px; /* スマホでは少し大きくすると読みやすいです */
+        text-align: center;    /* テキストも中央揃え */
+        width: 100%;
     }
 }
