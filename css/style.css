@@ -520,30 +520,39 @@ section h2{
     height: 30px;
     background: rgba(192, 200, 100, 0.5); /* 半透明のテープ */
 }
-/* 画面幅が768px以下（一般的なスマホ・タブレット）の場合の設定 */
-@media screen and (max-width: 768px) {
+/* 画面幅が780px以下の場合（スマホ・タブレット向け設定） */
+@media screen and (max-width: 780px) {
+    /* 1. 名刺を囲む外枠の調整 */
+    .col3 {
+        padding: 0 !important;
+        margin: 0 auto !important;
+        overflow: hidden; /* 回り込みの解除を確実にする */
+    }
+
+    /* 2. 名刺1枚1枚の枠（li）を強制リセット */
     .col3 li {
-        float: none;           /* 横並びを解除 */
-        width: 100%;           /* 幅をいっぱいにする */
-        margin-right: 50; /* 右側の余白を強制的に0にする */
-        margin-left: 50;  /* 左側の余白も0にする */
-        margin-bottom: 50px;   /* 下の要素との間隔 */
-        
-        /* 中身を中央に寄せる設定 */
-        display: block;
-        text-align: center;
+        float: none !important;      /* 左浮きを強制解除 */
+        width: 90% !important;       /* 幅を少し余裕を持たせたサイズに */
+        margin-left: auto !important;  /* 左の余白を自動（中央寄せの要） */
+        margin-right: auto !important; /* 右の余白を自動（中央寄せの要） */
+        margin-bottom: 50px !important;/* 下のカードとの間隔 */
+        padding: 0 !important;
+        text-align: center !important; /* 中身のテキストを中央へ */
+        display: block !important;
     }
 
+    /* 3. 画像自体の調整 */
     .col3 li img {
-        margin-left: auto;     /* 画像を中央に寄せる */
-        margin-right: auto;    /* 画像を中央に寄せる */
-        display: block;        /* 中央寄せを有効にするために必要 */
-        max-width: 280px;      /* スマホで画像が大きすぎないように調整（お好みで） */
-        width: 80%;            /* 画面幅に対して少し余裕を持たせる */
+        display: inline-block !important; /* inline-blockにすることで親のtext-align:centerが効く */
+        margin: 0 auto !important;
+        max-width: 100% !important;
+        height: auto !important;
     }
 
+    /* 4. 3行テキストの調整 */
     .card-text {
-        text-align: center;    /* テキストも中央揃え */
-        width: 100%;
+        width: 100% !important;
+        text-align: center !important;
+        margin: 10px 0 0 0 !important;
     }
 }
