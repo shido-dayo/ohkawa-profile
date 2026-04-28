@@ -525,8 +525,8 @@ section h2{
     .col3 li {
         float: none;           /* 横並びを解除 */
         width: 100%;           /* 幅をいっぱいにする */
-        margin-right: 0 !important; /* 右側の余白を強制的に0にする */
-        margin-left: 30 !important;  /* 左側の余白も0にする */
+        margin-right: 0 ; /* 右側の余白を強制的に0にする */
+        margin-left: 15 ;  /* 左側の余白も0にする */
         margin-bottom: 50px;   /* 下の要素との間隔 */
         
         /* 中身を中央に寄せる設定 */
